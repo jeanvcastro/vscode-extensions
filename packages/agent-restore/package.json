@@ -1,0 +1,75 @@
+{
+  "name": "agent-restore",
+  "displayName": "Agent Restore",
+  "description": "Reopen VS Code and every terminal goes back to the agent session it was running: Claude Code, Codex, Cursor CLI, Kimi and OpenCode. Automatic, per tab, no menus.",
+  "version": "1.0.0",
+  "publisher": "jeanvcastro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeanvcastro/vscode-extensions.git",
+    "directory": "packages/agent-restore"
+  },
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#101216",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other",
+    "AI"
+  ],
+  "keywords": [
+    "terminal",
+    "restore",
+    "resume",
+    "session",
+    "claude code",
+    "codex",
+    "cursor",
+    "kimi",
+    "opencode",
+    "ai agents",
+    "persistent terminals"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "agentRestore.installHooks",
+        "title": "Install Session Hooks",
+        "category": "Agent Restore"
+      },
+      {
+        "command": "agentRestore.uninstallHooks",
+        "title": "Remove Session Hooks",
+        "category": "Agent Restore"
+      }
+    ],
+    "configuration": {
+      "title": "Agent Restore",
+      "properties": {
+        "agentRestore.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically resume agent sessions in restored terminals."
+        },
+        "agentRestore.commands": {
+          "type": "object",
+          "default": {},
+          "markdownDescription": "Override the resume commands per agent. Example: `{ \"cursor\": { \"resume\": \"agent --resume={id}\" } }`. Keys: `resume` (exact session, use `{id}`), `last` (latest session in the folder), `pick` (session picker)."
+        }
+      }
+    }
+  },
+  "homepage": "https://github.com/jeanvcastro/vscode-extensions/tree/main/packages/agent-restore#readme",
+  "bugs": {
+    "url": "https://github.com/jeanvcastro/vscode-extensions/issues"
+  }
+}
