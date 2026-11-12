@@ -1,0 +1,15 @@
+{
+  "name": "vscode-extensions",
+  "private": true,
+  "description": "VS Code extensions for working with coding agents across multi-root workspaces.",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "package": "node scripts/package-all.mjs",
+    "set-publisher": "node scripts/set-publisher.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.6.0",
+    "ovsx": "^0.10.0"
+  }
+}
