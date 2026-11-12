@@ -1,0 +1,84 @@
+{
+  "name": "workspace-terminals",
+  "displayName": "Workspace Terminals",
+  "description": "Open a terminal at the root of your multi-root workspace (the folder that holds the .code-workspace file) in one click, no folder picker.",
+  "version": "1.0.0",
+  "publisher": "jeanvcastro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeanvcastro/vscode-extensions.git",
+    "directory": "packages/workspace-terminals"
+  },
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#101216",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "terminal",
+    "workspace",
+    "multi-root",
+    "root folder",
+    "code-workspace",
+    "new terminal",
+    "cwd"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onTerminalProfile:workspaceTerminals.root"
+  ],
+  "contributes": {
+    "terminal": {
+      "profiles": [
+        {
+          "id": "workspaceTerminals.root",
+          "title": "Workspace Root",
+          "icon": "root-folder"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "workspaceTerminals.newAtRoot",
+        "title": "New Terminal at Workspace Root",
+        "category": "Terminal",
+        "icon": {
+          "light": "media/root-terminal-light.svg",
+          "dark": "media/root-terminal-dark.svg"
+        }
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "workspaceTerminals.newAtRoot",
+          "when": "view == terminal",
+          "group": "navigation@0"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "workspaceTerminals.newAtRoot",
+        "key": "ctrl+`",
+        "when": "terminalCount == 0"
+      },
+      {
+        "command": "workspaceTerminals.newAtRoot",
+        "key": "ctrl+shift+`",
+        "when": "terminalCount == 0"
+      }
+    ]
+  },
+  "homepage": "https://github.com/jeanvcastro/vscode-extensions/tree/main/packages/workspace-terminals#readme",
+  "bugs": {
+    "url": "https://github.com/jeanvcastro/vscode-extensions/issues"
+  }
+}
