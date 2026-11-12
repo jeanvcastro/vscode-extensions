@@ -1,0 +1,113 @@
+{
+  "name": "agent-commit",
+  "displayName": "Agent Commit",
+  "description": "Write commit messages with the coding agent you already use (Claude Code by default). One click per repository, so it always lands in the right repo, even in multi-root workspaces.",
+  "version": "1.0.0",
+  "publisher": "jeanvcastro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeanvcastro/vscode-extensions.git",
+    "directory": "packages/agent-commit"
+  },
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#101216",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "SCM Providers",
+    "AI"
+  ],
+  "keywords": [
+    "commit message",
+    "git",
+    "ai",
+    "claude",
+    "claude code",
+    "codex",
+    "conventional commits",
+    "multi-root",
+    "scm",
+    "generate commit"
+  ],
+  "main": "./extension.js",
+  "extensionDependencies": [
+    "vscode.git"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "agentCommit.generate",
+        "title": "Generate Commit Message",
+        "category": "Agent Commit",
+        "icon": "$(sparkle)"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "agentCommit.generate",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Agent Commit",
+      "properties": {
+        "agentCommit.command": {
+          "type": "string",
+          "default": "claude -p",
+          "markdownDescription": "Command that reads the prompt from stdin and prints only the commit message to stdout. Default: `claude -p`. Faster and cheaper: `claude -p --model haiku`. Any CLI that reads its prompt from stdin works."
+        },
+        "agentCommit.language": {
+          "type": "string",
+          "default": "auto",
+          "markdownDescription": "Language of the message. `auto` follows the language of the repository's recent commits (English if there are none). Or set one, e.g. `English`, `Portuguese (Brazil)`."
+        },
+        "agentCommit.style": {
+          "type": "string",
+          "enum": [
+            "conventional",
+            "repository"
+          ],
+          "enumDescriptions": [
+            "Conventional Commits (feat, fix, chore…)",
+            "Mimic the style of the repository's recent commits"
+          ],
+          "default": "conventional",
+          "description": "Message format."
+        },
+        "agentCommit.instructions": {
+          "type": "string",
+          "default": "",
+          "editPresentation": "multilineText",
+          "description": "Extra instructions for the agent, e.g. \"always include the ticket ID from the branch name\"."
+        },
+        "agentCommit.maxDiffChars": {
+          "type": "number",
+          "default": 60000,
+          "description": "Maximum diff size sent to the agent; the rest is truncated."
+        },
+        "agentCommit.timeoutSeconds": {
+          "type": "number",
+          "default": 120,
+          "description": "How long to wait for the agent's answer."
+        },
+        "agentCommit.notifyWhenUnstaged": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a status bar note when nothing is staged and the message covers all changes."
+        }
+      }
+    }
+  },
+  "homepage": "https://github.com/jeanvcastro/vscode-extensions/tree/main/packages/agent-commit#readme",
+  "bugs": {
+    "url": "https://github.com/jeanvcastro/vscode-extensions/issues"
+  }
+}
