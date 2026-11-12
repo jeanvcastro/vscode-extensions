@@ -1,4 +1,4 @@
-# Midnight
+# Midnight Graphite
 
 **A quiet dark theme for long coding sessions.**
 
