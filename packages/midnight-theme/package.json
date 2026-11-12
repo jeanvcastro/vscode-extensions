@@ -1,0 +1,47 @@
+{
+  "name": "midnight-theme",
+  "displayName": "Midnight",
+  "description": "A quiet dark theme for long coding sessions: graphite-blue background, soft contrast and a restrained palette across editor, UI and terminal.",
+  "version": "1.0.0",
+  "publisher": "jeanvcastro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeanvcastro/vscode-extensions.git",
+    "directory": "packages/midnight-theme"
+  },
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#101216",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark theme",
+    "dark",
+    "midnight",
+    "minimal",
+    "low contrast",
+    "calm",
+    "terminal colors"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Midnight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/midnight-color-theme.json"
+      }
+    ]
+  },
+  "homepage": "https://github.com/jeanvcastro/vscode-extensions/tree/main/packages/midnight-theme#readme",
+  "bugs": {
+    "url": "https://github.com/jeanvcastro/vscode-extensions/issues"
+  }
+}
