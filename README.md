@@ -6,7 +6,7 @@ VS Code extensions for working with coding agents across multi-root workspaces.
 |---|---|
 | [**Agent Restore**](packages/agent-restore) | Reopen VS Code and every terminal resumes the agent session it was running: Claude Code, Codex, Cursor CLI, Kimi, OpenCode. |
 | [**Agent Commit**](packages/agent-commit) | Commit messages written by your coding agent, sent to the right repository in multi-root workspaces. |
-| [**Workspace Terminals**](packages/workspace-terminals) | One-click terminal at the workspace root. |
+| [**Workspace Root Terminal**](packages/workspace-terminals) | One-click terminal at the workspace root. |
 | [**Midnight Graphite**](packages/midnight-theme) | A quiet dark theme for long coding sessions. |
 
 Plain JavaScript, no build step, no runtime dependencies.

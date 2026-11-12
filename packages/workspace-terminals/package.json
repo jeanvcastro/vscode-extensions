@@ -1,6 +1,6 @@
 {
-  "name": "workspace-terminals",
-  "displayName": "Workspace Terminals",
+  "name": "workspace-root-terminal",
+  "displayName": "Workspace Root Terminal",
   "description": "Open a terminal at the root of your multi-root workspace (the folder that holds the .code-workspace file) in one click, no folder picker.",
   "version": "1.0.0",
   "publisher": "jeanvcastro",

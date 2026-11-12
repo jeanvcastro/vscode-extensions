@@ -1,10 +1,10 @@
-# Workspace Terminals
+# Workspace Root Terminal
 
 **Open a terminal at the root of your multi-root workspace in one click.**
 
-In a `.code-workspace` with several folders, VS Code always asks which folder to open a new terminal in. The workspace root, meaning the folder that holds the `.code-workspace` file, is never on that list. Workspace Terminals adds it back without adding the root as a folder.
+In a `.code-workspace` with several folders, VS Code always asks which folder to open a new terminal in. The workspace root, meaning the folder that holds the `.code-workspace` file, is never on that list. Workspace Root Terminal adds it back without adding the root as a folder.
 
-![Workspace Terminals opening a terminal at the workspace root](https://raw.githubusercontent.com/jeanvcastro/vscode-extensions/main/packages/workspace-terminals/media/demo.gif)
+![Workspace Root Terminal opening a terminal at the workspace root](https://raw.githubusercontent.com/jeanvcastro/vscode-extensions/main/packages/workspace-terminals/media/demo.gif)
 
 ## Features
 
